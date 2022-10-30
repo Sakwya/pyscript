@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if page_title %}
+            {{page_title}}
+        {% endif %}
+    </title>
+    <style>
+        body{
+            background:pink;
+        }
+        #root{
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #root a{
+            color: pink;
+            text-decoration: none;
+            display: block;
+            font-size: larger;
+            font-weight: bolder;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+{% endblock %}
