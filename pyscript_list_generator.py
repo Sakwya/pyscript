@@ -1,6 +1,7 @@
 """用于产生pyscript的目录内容"""
 import os
 
+
 class Generator:
     path = ""
     pyscript_list = []
@@ -22,9 +23,11 @@ class Generator:
     def __init__(self):
         self.__generator_pyscript_list()
 
-    def generator_pyscript(self,pyscript):
+    def generator_pyscript(self, pyscript):
         return None
+
     '''==='''
+
 
 if __name__ == "__main__":
     generator = Generator()
