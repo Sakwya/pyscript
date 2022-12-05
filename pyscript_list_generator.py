@@ -24,6 +24,7 @@ class Generator:
         self.__generator_pyscript_list()
 
     def generator_pyscript(self, pyscript):
+
         return None
 
     '''==='''
