@@ -13,8 +13,6 @@ class FolderCopier:
         root = tk.Tk()
         root.withdraw()
 
-    info = '怪猎涩涩装备复制用脚本'
-
     def __add_folder(self, p_dic, f_path):
         f_plist = os.listdir(f_path)
         for f_p in f_plist:
@@ -74,5 +72,3 @@ if __name__ == "__main__":
     copier = FolderCopier()
     copier.copy_folder()
     '''
-    a = FolderCopier()
-    print(a.info)
