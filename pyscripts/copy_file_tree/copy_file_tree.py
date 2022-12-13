@@ -23,16 +23,15 @@ class FolderTreeCopier:
             else:
                 os.open(n_n_path, os.O_CREAT)
 
-
-    def copy_folder_tree(self):
+    def main(self):
         """选择目标路径"""
         messagebox.showinfo("", "请选择要拷贝的根目录")
-        target_path = fd.askdirectory()
-        if not os.path.exists(target_path + "_"):
-            os.mkdir(target_path + "_")
-        self.__copy_child_folder(target_path, target_path + "_")
+        target_path = op.abspath(fd.askdirectory())
+        if not os.path.exists(target_path + "_copy"):
+            os.mkdir(target_path + "_copy")
+        self.__copy_child_folder(target_path, target_path + "_copy")
 
 
 if __name__ == '__main__':
     copier = FolderTreeCopier()
-    copier.copy_folder_tree()
+    copier.main()
