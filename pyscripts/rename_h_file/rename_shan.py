@@ -11,19 +11,26 @@ def re_by_name(path):
         if paths[-1] == "删":
             new_path = path + '/' + paths
             os.rename(new_path, new_path.rstrip('删'))
-        elif paths.split('.')[-1] == "jpg":
+        elif paths.split('.')[-1]=="png":
             new_path = path + '/' + paths
-            os.rename(new_path, new_path.replace('.jpg','.tar'))
-        video_tag = ['wmv', 'asf', 'asx', 'rm', 'rmvb', 'mpg', 'mpeg', 'mpe', '3gp', 'mov', 'mp4', 'm4v', 'avi', 'dat',
-                     'mkv', 'flv', 'vob']
-        if paths.split(".")[-1] in video_tag:
-            os.rename(new_path, path + '/' + paths.replace(" 1", '').replace(" 2", '').replace(" 3", '').replace(" 4",
-                                                                                                                 '').replace(
-                " 5", '').replace(" 6", ''))
+            os.rename(new_path, new_path.rstrip("png")+"7z")
+            
 
 
-'''c = fd.askdirectory()'''
-c="G:\pan4.27\.hmoe\！fengliyyds"
+def re_by_folder(path):
+    folder = os.listdir(path)
+    for paths in folder:
+        new_path = path + '/' + paths
+        if os.path.isfile(new_path):
+            os.rename(new_path, new_path.replace(" 1.mp4", '.mp4'))
+            continue
+        files = os.listdir(new_path)
+        for file in files:
+            shutil.move(new_path + '/' + file, path + '/' + paths + ' ' + file.rstrip('删'))
+        os.rmdir(new_path)
+
+
+c = fd.askdirectory()
 re_by_name(c)
 
 '''
